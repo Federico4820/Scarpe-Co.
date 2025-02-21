@@ -1,0 +1,17 @@
+﻿@model Articolo
+@{
+    Layout = "_Layout";
+}
+
+<h2>@Model.Nome</h2>
+
+<div class="dettagli-prodotto">
+    <img src="@Model.ImmagineCopertina" alt="@Model.Nome" class="copertina" />
+    <p><strong>Prezzo:</strong> @Model.Prezzo.ToString("C")</p>
+    <p><strong>Descrizione:</strong> @Model.Descrizione</p>
+    <div class="immagini-aggiuntive">
+        <img src="@Model.ImmagineAggiuntiva1" alt="Dettaglio 1 di @Model.Nome" />
+        <img src="@Model.ImmagineAggiuntiva2" alt="Dettaglio 2 di @Model.Nome" />
+    </div>
+    <a asp-action="Index">Torna alla Vetrina</a>
+</div>

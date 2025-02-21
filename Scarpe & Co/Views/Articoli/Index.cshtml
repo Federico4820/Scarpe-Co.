@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Articolo>
+@{
+    Layout = "_Layout";
+}
+
+<h2>Vetrina Prodotti</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Aggiungi Nuovo Prodotto</a>
+</p>
+
+<div class="prodotti-container">
+    @foreach (var articolo in Model)
+    {
+        <div class="prodotto-card">
+            <img src="@articolo.ImmagineCopertina" alt="@articolo.Nome" class="copertina" />
+            <h3>@articolo.Nome</h3>
+            <p>@articolo.Prezzo.ToString("C")</p>
+            <a asp-action="Dettagli" asp-route-id="@articolo.Id">Visualizza Dettagli</a> |
+            <a asp-action="Edit" asp-route-id="@articolo.Id">Modifica</a> |
+            <a asp-action="Delete" asp-route-id="@articolo.Id">Elimina</a>
+        </div>
+    }
+</div>

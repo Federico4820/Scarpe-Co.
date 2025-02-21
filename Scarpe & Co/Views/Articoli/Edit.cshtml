@@ -1,0 +1,41 @@
+﻿@model Articolo
+@{
+    Layout = "_Layout";
+}
+
+<h2>Modifica Prodotto</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Prezzo"></label>
+        <input asp-for="Prezzo" class="form-control" />
+        <span asp-validation-for="Prezzo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Descrizione"></label>
+        <textarea asp-for="Descrizione" class="form-control"></textarea>
+        <span asp-validation-for="Descrizione" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImmagineCopertina"></label>
+        <input asp-for="ImmagineCopertina" class="form-control" />
+        <span asp-validation-for="ImmagineCopertina" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImmagineAggiuntiva1"></label>
+        <input asp-for="ImmagineAggiuntiva1" class="form-control" />
+        <span asp-validation-for="ImmagineAggiuntiva1" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ImmagineAggiuntiva2"></label>
+        <input asp-for="ImmagineAggiuntiva2" class="form-control" />
+        <span asp-validation-for="ImmagineAggiuntiva2" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+</form>
